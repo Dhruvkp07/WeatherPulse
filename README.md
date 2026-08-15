@@ -1,75 +1,69 @@
 # WeatherPulse 🌦️
 
-An automated weather data engineering and analytics pipeline that collects
-current weather data for 10 major Indian cities, stores historical
-observations, and visualizes trends through Power BI.
+WeatherPulse is an automated weather data pipeline that collects live weather data for major Indian cities, stores historical observations, performs SQL-based analysis, and presents the results through an interactive Power BI dashboard.
+
+The project also includes a machine learning component for temperature prediction.
+
+## Project Overview
+
+WeatherPulse combines three areas:
+
+- Data Engineering
+- Data Analytics
+- Data Science / Machine Learning
+
+The main workflow is:
+
+Meteosource API
+        ↓
+Python Data Collection
+        ↓
+Data Validation
+        ↓
+SQLite Database
+        ↓
+SQL Analytics
+        ↓
+Power BI Dashboard
+
+Historical Weather Data
+        ↓
+Feature Engineering
+        ↓
+Random Forest Regression
+        ↓
+Temperature Prediction
+
 
 ## Architecture
 
-Meteosource API
-       ↓
-Python Data Collection
-       ↓
-Pandas Transformation & Validation
-       ↓
-SQLite Database
-       ↓
-CSV Export
-       ↓
-Power BI Dashboard
-
-Windows Task Scheduler runs the pipeline hourly.
-
-## Features
-
-- Collects live weather data for 10 Indian cities
-- API authentication using environment variables
-- Automated hourly data collection
-- Data validation using Pandas
-- Historical storage using SQLite
-- SQL-based analytics
-- CSV export for BI consumption
-- Power BI dashboard with:
-  - Temperature analysis
-  - Weather conditions
-  - Wind analysis
-  - Precipitation
-  - City-level trends
-
-## Tech Stack
-
-- Python
-- Requests
-- Pandas
-- SQLite
-- SQL
-- Power BI
-- Windows Task Scheduler
-- python-dotenv
-
-## Cities
-
-- Delhi
-- Mumbai
-- Bangalore
-- Chennai
-- Kolkata
-- Hyderabad
-- Pune
-- Jaipur
-- Ahmedabad
-- Lucknow
-
-## Project Structure
-
 ```text
-WeatherPulse/
-├── sql/
-│   └── analytics.sql
-├── .gitignore
-├── requirements.txt
-├── README.md
-├── weather_collector.py
-├── export_data.py
-├── run_pipeline.py
-└── database_test.py
+                    Meteosource API
+                           |
+                           v
+                 weather_collector.py
+                           |
+                           v
+                  Pandas DataFrame
+                           |
+                    Data Validation
+                           |
+                           v
+                     SQLite DB
+                           |
+              +------------+------------+
+              |                         |
+              v                         v
+        SQL Analytics             ML Pipeline
+              |                         |
+              |                  Feature Engineering
+              |                         |
+              |                  Random Forest
+              |                         |
+              |                  Temperature Prediction
+              |                         |
+              +------------+------------+
+                           |
+                           v
+                     Power BI
+                      Dashboard

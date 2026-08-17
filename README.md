@@ -68,4 +68,9 @@ Temperature Prediction
                      Power BI
                       Dashboard
 
-API source : https://www.meteosource.com/
+
+```
+
+API source : https://www.meteosource.com
+Created by : @dhruvkp07 (Github) | Linekdin : https://www.linkedin.com/in/dhruv-kumar-463b27290/
+

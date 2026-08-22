@@ -74,3 +74,5 @@ Temperature Prediction
 API source : https://www.meteosource.com
 Created by : @dhruvkp07 (Github) | Linekdin : https://www.linkedin.com/in/dhruv-kumar-463b27290/
 
+IMP : Some dashboards are on progress!
+
